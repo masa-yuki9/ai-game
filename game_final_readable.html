@@ -264,6 +264,26 @@
         margin: 3px;
         border-radius: 8px;
       }
+
+      #pad {
+        position: fixed;
+        left: 14px;
+        bottom: 14px;
+        z-index: 9999;
+      }
+
+      #pad .row {
+        display: flex;
+        justify-content: center;
+      }
+
+      #pad button {
+        width: 48px;
+        height: 48px;
+        margin: 3px;
+        font-size: 18px;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -1369,15 +1389,18 @@ G`;
       resetGame();
       requestAnimationFrame(gameLoop);
     </script>
-    <div
-      id="mobileControls"
-      style="position: fixed; left: 18px; bottom: 18px; z-index: 9999"
-    >
-      <button onclick="tryMove(0, -1)">↑</button><br />
-      <button onclick="tryMove(-1, 0)">←</button>
-      <button onclick="tryMove(0, 1)">↓</button>
-      <button onclick="tryMove(1, 0)">→</button>
-      <button onclick="handleEventChoice('talk')">決定</button>
+    <div id="pad">
+      <div class="row">
+        <button onclick="tryMove(0, -1)">↑</button>
+      </div>
+      <div class="row">
+        <button onclick="tryMove(-1, 0)">←</button>
+        <button onclick="tryMove(0, 1)">↓</button>
+        <button onclick="tryMove(1, 0)">→</button>
+      </div>
+      <div class="row">
+        <button onclick="talkToNearbyNpc()">決定</button>
+      </div>
     </div>
   </body>
 </html>
