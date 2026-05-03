@@ -250,6 +250,20 @@
           grid-column: 1/-1;
         }
       }
+
+      #mobileControls {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+      }
+
+      #mobileControls button {
+        font-size: 16px;
+        padding: 10px;
+        margin: 3px;
+        border-radius: 8px;
+      }
     </style>
   </head>
   <body>
@@ -1363,7 +1377,7 @@ G`;
       <button onclick="tryMove(-1, 0)">←</button>
       <button onclick="tryMove(0, 1)">↓</button>
       <button onclick="tryMove(1, 0)">→</button>
-      <button onclick="talkToNearbyNpc()">決定</button>
+      <button onclick="handleEventChoice('talk')">決定</button>
     </div>
   </body>
 </html>
