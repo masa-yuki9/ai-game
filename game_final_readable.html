@@ -1355,13 +1355,15 @@ G`;
       resetGame();
       requestAnimationFrame(gameLoop);
     </script>
-
-    <div id="controls" style="position: absolute; bottom: 20px; left: 20px">
+    <div
+      id="mobileControls"
+      style="position: fixed; left: 18px; bottom: 18px; z-index: 9999"
+    >
       <button onclick="tryMove(0, -1)">↑</button><br />
       <button onclick="tryMove(-1, 0)">←</button>
       <button onclick="tryMove(0, 1)">↓</button>
       <button onclick="tryMove(1, 0)">→</button>
-      <button onclick="interact()">決定</button>
+      <button onclick="talkToNearbyNpc()">決定</button>
     </div>
   </body>
 </html>
